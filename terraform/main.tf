@@ -11,7 +11,7 @@ provider "aws" {
 }
 resource "aws_instance" "devopsforge" {
   ami           = "ami-0b6d9d3d33ba97d99"
-  instance_type = "t3.micro"
+  instance_type = var.instance_type
 
   key_name = "DevOps"
 
