@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: devopsforge
+
+spec:
+  replicas: 3
+
+  selector:
+    matchLabels:
+      app: devopsforge
+
+  template:
+    metadata:
+      labels:
+        app: devopsforge
+
+    spec:
+      containers:
+        - name: devopsforge
+          image: aadityadocker16/devopsforge@sha256:3561f09843446ad542c3e12082cc23fd8ae77f2a8b0771dd5bcb60536a9911bd
+          ports:
+            - containerPort: 5000
